@@ -1,12 +1,224 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\Zeus\\OneDrive\\Desktop\\Folder for Everything\\COMPUTER SCIENCE\\GITHUB\\lib-me-alone-cs\\backend\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{061E0337-F707-429B-93EE-93CAD4E9628D}|backend.csproj|c:\\users\\zeus\\onedrive\\desktop\\folder for everything\\computer science\\github\\lib-me-alone-cs\\backend\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{061E0337-F707-429B-93EE-93CAD4E9628D}|backend.csproj|solutionrelative:controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{061E0337-F707-429B-93EE-93CAD4E9628D}|backend.csproj|c:\\users\\zeus\\onedrive\\desktop\\folder for everything\\computer science\\github\\lib-me-alone-cs\\backend\\controllers\\borrowedbookcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{061E0337-F707-429B-93EE-93CAD4E9628D}|backend.csproj|solutionrelative:controllers\\borrowedbookcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{061E0337-F707-429B-93EE-93CAD4E9628D}|backend.csproj|c:\\users\\zeus\\onedrive\\desktop\\folder for everything\\computer science\\github\\lib-me-alone-cs\\backend\\controllers\\bookcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{061E0337-F707-429B-93EE-93CAD4E9628D}|backend.csproj|solutionrelative:controllers\\bookcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{061E0337-F707-429B-93EE-93CAD4E9628D}|backend.csproj|c:\\users\\zeus\\onedrive\\desktop\\folder for everything\\computer science\\github\\lib-me-alone-cs\\backend\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{061E0337-F707-429B-93EE-93CAD4E9628D}|backend.csproj|solutionrelative:controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{061E0337-F707-429B-93EE-93CAD4E9628D}|backend.csproj|c:\\users\\zeus\\onedrive\\desktop\\folder for everything\\computer science\\github\\lib-me-alone-cs\\backend\\models\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{061E0337-F707-429B-93EE-93CAD4E9628D}|backend.csproj|solutionrelative:models\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{061E0337-F707-429B-93EE-93CAD4E9628D}|backend.csproj|c:\\users\\zeus\\onedrive\\desktop\\folder for everything\\computer science\\github\\lib-me-alone-cs\\backend\\models\\borrowedbook.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{061E0337-F707-429B-93EE-93CAD4E9628D}|backend.csproj|solutionrelative:models\\borrowedbook.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{061E0337-F707-429B-93EE-93CAD4E9628D}|backend.csproj|c:\\users\\zeus\\onedrive\\desktop\\folder for everything\\computer science\\github\\lib-me-alone-cs\\backend\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{061E0337-F707-429B-93EE-93CAD4E9628D}|backend.csproj|solutionrelative:models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{061E0337-F707-429B-93EE-93CAD4E9628D}|backend.csproj|c:\\users\\zeus\\onedrive\\desktop\\folder for everything\\computer science\\github\\lib-me-alone-cs\\backend\\weatherforecast.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{061E0337-F707-429B-93EE-93CAD4E9628D}|backend.csproj|solutionrelative:weatherforecast.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{061E0337-F707-429B-93EE-93CAD4E9628D}|backend.csproj|c:\\users\\zeus\\onedrive\\desktop\\folder for everything\\computer science\\github\\lib-me-alone-cs\\backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{061E0337-F707-429B-93EE-93CAD4E9628D}|backend.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{061E0337-F707-429B-93EE-93CAD4E9628D}|backend.csproj|c:\\users\\zeus\\onedrive\\desktop\\folder for everything\\computer science\\github\\lib-me-alone-cs\\backend\\database\\connection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{061E0337-F707-429B-93EE-93CAD4E9628D}|backend.csproj|solutionrelative:database\\connection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{061E0337-F707-429B-93EE-93CAD4E9628D}|backend.csproj|c:\\users\\zeus\\onedrive\\desktop\\folder for everything\\computer science\\github\\lib-me-alone-cs\\backend\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{061E0337-F707-429B-93EE-93CAD4E9628D}|backend.csproj|solutionrelative:properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{061E0337-F707-429B-93EE-93CAD4E9628D}|backend.csproj|c:\\users\\zeus\\onedrive\\desktop\\folder for everything\\computer science\\github\\lib-me-alone-cs\\backend\\backend.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
+      "RelativeMoniker": "D:0:0:{061E0337-F707-429B-93EE-93CAD4E9628D}|backend.csproj|solutionrelative:backend.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "BorrowedBookController.cs",
+              "DocumentMoniker": "C:\\Users\\Zeus\\OneDrive\\Desktop\\Folder for Everything\\COMPUTER SCIENCE\\GITHUB\\lib-me-alone-cs\\backend\\Controllers\\BorrowedBookController.cs",
+              "RelativeDocumentMoniker": "Controllers\\BorrowedBookController.cs",
+              "ToolTip": "C:\\Users\\Zeus\\OneDrive\\Desktop\\Folder for Everything\\COMPUTER SCIENCE\\GITHUB\\lib-me-alone-cs\\backend\\Controllers\\BorrowedBookController.cs",
+              "RelativeToolTip": "Controllers\\BorrowedBookController.cs",
+              "ViewState": "AgIAAEEAAAAAAAAAAAAcwFIAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-20T14:31:23.148Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "BookController.cs",
+              "DocumentMoniker": "C:\\Users\\Zeus\\OneDrive\\Desktop\\Folder for Everything\\COMPUTER SCIENCE\\GITHUB\\lib-me-alone-cs\\backend\\Controllers\\BookController.cs",
+              "RelativeDocumentMoniker": "Controllers\\BookController.cs",
+              "ToolTip": "C:\\Users\\Zeus\\OneDrive\\Desktop\\Folder for Everything\\COMPUTER SCIENCE\\GITHUB\\lib-me-alone-cs\\backend\\Controllers\\BookController.cs",
+              "RelativeToolTip": "Controllers\\BookController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAUwFIAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-20T14:31:08.288Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "C:\\Users\\Zeus\\OneDrive\\Desktop\\Folder for Everything\\COMPUTER SCIENCE\\GITHUB\\lib-me-alone-cs\\backend\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "Controllers\\UserController.cs",
+              "ToolTip": "C:\\Users\\Zeus\\OneDrive\\Desktop\\Folder for Everything\\COMPUTER SCIENCE\\GITHUB\\lib-me-alone-cs\\backend\\Controllers\\UserController.cs",
+              "RelativeToolTip": "Controllers\\UserController.cs",
+              "ViewState": "AgIAADAAAAAAAAAAAAAwwFAAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-20T14:30:33.729Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "BorrowedBook.cs",
+              "DocumentMoniker": "C:\\Users\\Zeus\\OneDrive\\Desktop\\Folder for Everything\\COMPUTER SCIENCE\\GITHUB\\lib-me-alone-cs\\backend\\Models\\BorrowedBook.cs",
+              "RelativeDocumentMoniker": "Models\\BorrowedBook.cs",
+              "ToolTip": "C:\\Users\\Zeus\\OneDrive\\Desktop\\Folder for Everything\\COMPUTER SCIENCE\\GITHUB\\lib-me-alone-cs\\backend\\Models\\BorrowedBook.cs",
+              "RelativeToolTip": "Models\\BorrowedBook.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-20T14:26:58.879Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Book.cs",
+              "DocumentMoniker": "C:\\Users\\Zeus\\OneDrive\\Desktop\\Folder for Everything\\COMPUTER SCIENCE\\GITHUB\\lib-me-alone-cs\\backend\\Models\\Book.cs",
+              "RelativeDocumentMoniker": "Models\\Book.cs",
+              "ToolTip": "C:\\Users\\Zeus\\OneDrive\\Desktop\\Folder for Everything\\COMPUTER SCIENCE\\GITHUB\\lib-me-alone-cs\\backend\\Models\\Book.cs",
+              "RelativeToolTip": "Models\\Book.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-20T14:23:53.768Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\Zeus\\OneDrive\\Desktop\\Folder for Everything\\COMPUTER SCIENCE\\GITHUB\\lib-me-alone-cs\\backend\\Models\\User.cs",
+              "RelativeDocumentMoniker": "Models\\User.cs",
+              "ToolTip": "C:\\Users\\Zeus\\OneDrive\\Desktop\\Folder for Everything\\COMPUTER SCIENCE\\GITHUB\\lib-me-alone-cs\\backend\\Models\\User.cs",
+              "RelativeToolTip": "Models\\User.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-20T14:21:51.736Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Zeus\\OneDrive\\Desktop\\Folder for Everything\\COMPUTER SCIENCE\\GITHUB\\lib-me-alone-cs\\backend\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\Zeus\\OneDrive\\Desktop\\Folder for Everything\\COMPUTER SCIENCE\\GITHUB\\lib-me-alone-cs\\backend\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-20T13:58:04.73Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Connection.cs",
+              "DocumentMoniker": "C:\\Users\\Zeus\\OneDrive\\Desktop\\Folder for Everything\\COMPUTER SCIENCE\\GITHUB\\lib-me-alone-cs\\backend\\Database\\Connection.cs",
+              "RelativeDocumentMoniker": "Database\\Connection.cs",
+              "ToolTip": "C:\\Users\\Zeus\\OneDrive\\Desktop\\Folder for Everything\\COMPUTER SCIENCE\\GITHUB\\lib-me-alone-cs\\backend\\Database\\Connection.cs",
+              "RelativeToolTip": "Database\\Connection.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-20T14:03:42.903Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "WeatherForecast.cs",
+              "DocumentMoniker": "C:\\Users\\Zeus\\OneDrive\\Desktop\\Folder for Everything\\COMPUTER SCIENCE\\GITHUB\\lib-me-alone-cs\\backend\\WeatherForecast.cs",
+              "RelativeDocumentMoniker": "WeatherForecast.cs",
+              "ToolTip": "C:\\Users\\Zeus\\OneDrive\\Desktop\\Folder for Everything\\COMPUTER SCIENCE\\GITHUB\\lib-me-alone-cs\\backend\\WeatherForecast.cs",
+              "RelativeToolTip": "WeatherForecast.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-20T13:58:46.025Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "WeatherForecastController.cs",
+              "DocumentMoniker": "C:\\Users\\Zeus\\OneDrive\\Desktop\\Folder for Everything\\COMPUTER SCIENCE\\GITHUB\\lib-me-alone-cs\\backend\\Controllers\\WeatherForecastController.cs",
+              "RelativeDocumentMoniker": "Controllers\\WeatherForecastController.cs",
+              "ToolTip": "C:\\Users\\Zeus\\OneDrive\\Desktop\\Folder for Everything\\COMPUTER SCIENCE\\GITHUB\\lib-me-alone-cs\\backend\\Controllers\\WeatherForecastController.cs",
+              "RelativeToolTip": "Controllers\\WeatherForecastController.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABUAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-17T13:58:04.758Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\Users\\Zeus\\OneDrive\\Desktop\\Folder for Everything\\COMPUTER SCIENCE\\GITHUB\\lib-me-alone-cs\\backend\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "Properties\\launchSettings.json",
+              "ToolTip": "C:\\Users\\Zeus\\OneDrive\\Desktop\\Folder for Everything\\COMPUTER SCIENCE\\GITHUB\\lib-me-alone-cs\\backend\\Properties\\launchSettings.json",
+              "RelativeToolTip": "Properties\\launchSettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-12-20T14:12:55.76Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "backend.http",
+              "DocumentMoniker": "C:\\Users\\Zeus\\OneDrive\\Desktop\\Folder for Everything\\COMPUTER SCIENCE\\GITHUB\\lib-me-alone-cs\\backend\\backend.http",
+              "RelativeDocumentMoniker": "backend.http",
+              "ToolTip": "C:\\Users\\Zeus\\OneDrive\\Desktop\\Folder for Everything\\COMPUTER SCIENCE\\GITHUB\\lib-me-alone-cs\\backend\\backend.http",
+              "RelativeToolTip": "backend.http",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
+              "WhenOpened": "2024-12-20T13:58:38.751Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }
