@@ -19,9 +19,8 @@ namespace backend.Database
                 mySqlConnection = new MySqlConnection(mysqlconn);
                 mySqlConnection.Open();
 
-                MySqlCommand cmd = mySqlConnection.CreateCommand();
-                cmd.CommandText = "INSERT INTO `users`(`username`, `password`, `role`) VALUES ('zeus', '123', 'admin')";
-                cmd.ExecuteNonQuery();
+                
+                
                 Console.Write("Connected successfully!");
             }
             catch (Exception ex)

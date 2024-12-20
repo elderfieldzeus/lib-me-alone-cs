@@ -1,85 +1,60 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using backend.Database;
+using backend.Models;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using MySql.Data.MySqlClient;
 
 namespace backend.Controllers
 {
     [ApiController]
-    [Route("book")]
+    [Route("api/book")]
     public class BookController : Controller
     {
         [HttpGet]
         public ActionResult Index()
         {
-            return View();
+            MySqlConnection? conn = Connection.getConnection();
+            MySqlDataReader reader;
+
+            if (conn == null)
+            {
+                return StatusCode(500);
+            }
+
+            try
+            {
+                MySqlCommand cmd = conn.CreateCommand();
+                cmd.CommandText = "SELECT * FROM books";
+
+                reader = cmd.ExecuteReader();
+
+                List<Book> books = new List<Book>();
+
+                while (reader.Read())
+                {
+                    Book book = new Book();
+
+                    Console.WriteLine(reader);
+
+                    book.id = (reader.GetInt32("id"));
+                    book.name = (reader.GetString("name"));
+                    book.author = (reader.GetString("author"));
+                    book.description = (reader.GetString("description"));
+                    book.is_borrowed = (reader.GetBoolean("is_borrowed"));
+
+                    books.Add(book);
+                }
+
+                conn.Close();
+                return Ok(books);
+            }
+            catch (Exception ex)
+            {
+                conn.Close();
+                return StatusCode(500, ex.Message);
+            }
         }
 
-        //// GET: BookController/Details/5
-        //public ActionResult Details(int id)
-        //{
-        //    return View();
-        //}
-
-        //// GET: BookController/Create
-        //public ActionResult Create()
-        //{
-        //    return View();
-        //}
-
-        //// POST: BookController/Create
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public ActionResult Create(IFormCollection collection)
-        //{
-        //    try
-        //    {
-        //        return RedirectToAction(nameof(Index));
-        //    }
-        //    catch
-        //    {
-        //        return View();
-        //    }
-        //}
-
-        //// GET: BookController/Edit/5
-        //public ActionResult Edit(int id)
-        //{
-        //    return View();
-        //}
-
-        //// POST: BookController/Edit/5
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public ActionResult Edit(int id, IFormCollection collection)
-        //{
-        //    try
-        //    {
-        //        return RedirectToAction(nameof(Index));
-        //    }
-        //    catch
-        //    {
-        //        return View();
-        //    }
-        //}
-
-        //// GET: BookController/Delete/5
-        //public ActionResult Delete(int id)
-        //{
-        //    return View();
-        //}
-
-        //// POST: BookController/Delete/5
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public ActionResult Delete(int id, IFormCollection collection)
-        //{
-        //    try
-        //    {
-        //        return RedirectToAction(nameof(Index));
-        //    }
-        //    catch
-        //    {
-        //        return View();
-        //    }
-        //}
+       
     }
 }
