@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\Zeus\\OneDrive\\Desktop\\Folder for Everything\\COMPUTER SCIENCE\\GITHUB\\lib-me-alone-cs\\backend\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{061E0337-F707-429B-93EE-93CAD4E9628D}|backend.csproj|c:\\users\\zeus\\onedrive\\desktop\\folder for everything\\computer science\\github\\lib-me-alone-cs\\backend\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{061E0337-F707-429B-93EE-93CAD4E9628D}|backend.csproj|solutionrelative:controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{061E0337-F707-429B-93EE-93CAD4E9628D}|backend.csproj|c:\\users\\zeus\\onedrive\\desktop\\folder for everything\\computer science\\github\\lib-me-alone-cs\\backend\\controllers\\borrowedbookcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{061E0337-F707-429B-93EE-93CAD4E9628D}|backend.csproj|solutionrelative:controllers\\borrowedbookcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -11,8 +15,16 @@
       "RelativeMoniker": "D:0:0:{061E0337-F707-429B-93EE-93CAD4E9628D}|backend.csproj|solutionrelative:controllers\\bookcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{061E0337-F707-429B-93EE-93CAD4E9628D}|backend.csproj|c:\\users\\zeus\\onedrive\\desktop\\folder for everything\\computer science\\github\\lib-me-alone-cs\\backend\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{061E0337-F707-429B-93EE-93CAD4E9628D}|backend.csproj|solutionrelative:controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{061E0337-F707-429B-93EE-93CAD4E9628D}|backend.csproj|c:\\users\\zeus\\onedrive\\desktop\\folder for everything\\computer science\\github\\lib-me-alone-cs\\backend\\dtos\\user\\signupdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{061E0337-F707-429B-93EE-93CAD4E9628D}|backend.csproj|solutionrelative:dtos\\user\\signupdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{061E0337-F707-429B-93EE-93CAD4E9628D}|backend.csproj|c:\\users\\zeus\\onedrive\\desktop\\folder for everything\\computer science\\github\\lib-me-alone-cs\\backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{061E0337-F707-429B-93EE-93CAD4E9628D}|backend.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{061E0337-F707-429B-93EE-93CAD4E9628D}|backend.csproj|c:\\users\\zeus\\onedrive\\desktop\\folder for everything\\computer science\\github\\lib-me-alone-cs\\backend\\dtos\\user\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{061E0337-F707-429B-93EE-93CAD4E9628D}|backend.csproj|solutionrelative:dtos\\user\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,37 +34,76 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
+              "Title": "SignupDto.cs",
+              "DocumentMoniker": "C:\\Users\\Zeus\\OneDrive\\Desktop\\Folder for Everything\\COMPUTER SCIENCE\\GITHUB\\lib-me-alone-cs\\backend\\Dtos\\User\\SignupDto.cs",
+              "RelativeDocumentMoniker": "Dtos\\User\\SignupDto.cs",
+              "ToolTip": "C:\\Users\\Zeus\\OneDrive\\Desktop\\Folder for Everything\\COMPUTER SCIENCE\\GITHUB\\lib-me-alone-cs\\backend\\Dtos\\User\\SignupDto.cs",
+              "RelativeToolTip": "Dtos\\User\\SignupDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-21T06:07:39.233Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "LoginDto.cs",
+              "DocumentMoniker": "C:\\Users\\Zeus\\OneDrive\\Desktop\\Folder for Everything\\COMPUTER SCIENCE\\GITHUB\\lib-me-alone-cs\\backend\\Dtos\\User\\LoginDto.cs",
+              "RelativeDocumentMoniker": "Dtos\\User\\LoginDto.cs",
+              "ToolTip": "C:\\Users\\Zeus\\OneDrive\\Desktop\\Folder for Everything\\COMPUTER SCIENCE\\GITHUB\\lib-me-alone-cs\\backend\\Dtos\\User\\LoginDto.cs",
+              "RelativeToolTip": "Dtos\\User\\LoginDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-21T05:41:23.585Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Zeus\\OneDrive\\Desktop\\Folder for Everything\\COMPUTER SCIENCE\\GITHUB\\lib-me-alone-cs\\backend\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\Zeus\\OneDrive\\Desktop\\Folder for Everything\\COMPUTER SCIENCE\\GITHUB\\lib-me-alone-cs\\backend\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-21T05:24:40.985Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "BorrowedBookController.cs",
               "DocumentMoniker": "C:\\Users\\Zeus\\OneDrive\\Desktop\\Folder for Everything\\COMPUTER SCIENCE\\GITHUB\\lib-me-alone-cs\\backend\\Controllers\\BorrowedBookController.cs",
               "RelativeDocumentMoniker": "Controllers\\BorrowedBookController.cs",
               "ToolTip": "C:\\Users\\Zeus\\OneDrive\\Desktop\\Folder for Everything\\COMPUTER SCIENCE\\GITHUB\\lib-me-alone-cs\\backend\\Controllers\\BorrowedBookController.cs",
               "RelativeToolTip": "Controllers\\BorrowedBookController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAfAAAAAAAAAA==",
+              "ViewState": "AgIAABAAAAAAAAAAAAAgwAoAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-21T02:45:30.013Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "UserController.cs",
               "DocumentMoniker": "C:\\Users\\Zeus\\OneDrive\\Desktop\\Folder for Everything\\COMPUTER SCIENCE\\GITHUB\\lib-me-alone-cs\\backend\\Controllers\\UserController.cs",
               "RelativeDocumentMoniker": "Controllers\\UserController.cs",
               "ToolTip": "C:\\Users\\Zeus\\OneDrive\\Desktop\\Folder for Everything\\COMPUTER SCIENCE\\GITHUB\\lib-me-alone-cs\\backend\\Controllers\\UserController.cs",
               "RelativeToolTip": "Controllers\\UserController.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAADgAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAMoAAAAAAAAAAAAcwNoAAABLAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-21T02:45:20.533Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "BookController.cs",
               "DocumentMoniker": "C:\\Users\\Zeus\\OneDrive\\Desktop\\Folder for Everything\\COMPUTER SCIENCE\\GITHUB\\lib-me-alone-cs\\backend\\Controllers\\BookController.cs",
               "RelativeDocumentMoniker": "Controllers\\BookController.cs",

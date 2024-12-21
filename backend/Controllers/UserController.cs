@@ -1,4 +1,5 @@
 ﻿using backend.Database;
+using backend.Dtos.User;
 using backend.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -142,37 +143,37 @@ namespace backend.Controllers
             }
         }
 
-        [HttpPost("auth")]
-        public ActionResult SignUp(string username, string password, string cpassword)
+        [HttpPost("signup")]
+        public ActionResult SignUp([FromBody] SignupDto signup_data)
         {
-            if (!password.Equals(cpassword))
+            if (!signup_data.password.Equals(signup_data.cpassword))
             {
-                return BadRequest("Passwords must match.");
+                return BadRequest(new { message = "Passwords must match.", success = false });
             }
 
             MySqlConnection? conn = Connection.getConnection();
 
             if(conn == null)
             {
-                return StatusCode(500);
+                return StatusCode(500, new { message = "Internal Server Error", success = false });
             }
 
             try
             {
                 MySqlCommand cmd = conn.CreateCommand();
                 cmd.CommandText = "SELECT * FROM users WHERE username = @username";
-                cmd.Parameters.AddWithValue("@username", username);
+                cmd.Parameters.AddWithValue("@username", signup_data.username);
 
                 int id = Convert.ToInt32(cmd.ExecuteScalar());
 
                 if (id != 0)
                 {
-                    return BadRequest("Username already taken");
+                    return BadRequest(new { message = "Username already taken", success = false});
                 }
 
                 cmd.CommandText = "INSERT INTO users(username, password) VALUES (@user, @password)";
-                cmd.Parameters.AddWithValue("@user", username);
-                cmd.Parameters.AddWithValue("@password", password);
+                cmd.Parameters.AddWithValue("@user", signup_data.username);
+                cmd.Parameters.AddWithValue("@password", signup_data.password);
 
                 cmd.ExecuteNonQuery();
             }
@@ -183,46 +184,97 @@ namespace backend.Controllers
             }
 
             conn.Close();
-            return Ok();
+            return Ok(new { message = "Successfully created an account.", success = true });
         }
 
-        [HttpGet("auth")]
-        public ActionResult Login(string username, string password)
+        [HttpPost("signup/lib")]
+        public ActionResult SignUpLib([FromBody] SignupDto signup_data)
         {
+            if (!signup_data.password.Equals(signup_data.cpassword))
+            {
+                return BadRequest(new { message = "Passwords must match.", success = false });
+            }
+
             MySqlConnection? conn = Connection.getConnection();
-            MySqlDataReader reader;
 
             if (conn == null)
             {
-                return StatusCode(500);
+                return StatusCode(500, new { message = "Internal Server Error", success = false });
             }
 
             try
             {
                 MySqlCommand cmd = conn.CreateCommand();
                 cmd.CommandText = "SELECT * FROM users WHERE username = @username";
-                cmd.Parameters.AddWithValue("@username", username);
+                cmd.Parameters.AddWithValue("@username", signup_data.username);
 
-                reader = cmd.ExecuteReader();
+                int id = Convert.ToInt32(cmd.ExecuteScalar());
 
-                if (!reader.Read() || !reader.GetString("password").Equals(password))
+                if (id != 0)
                 {
-                    return BadRequest("Invalid login attempt");
+                    return BadRequest(new { message = "Username already taken", success = false });
                 }
 
+                cmd.CommandText = "INSERT INTO users(username, password, role) VALUES (@user, @password, @role)";
+                cmd.Parameters.AddWithValue("@user", signup_data.username);
+                cmd.Parameters.AddWithValue("@password", signup_data.password);
+                cmd.Parameters.AddWithValue("@role", "librarian");
+
+                cmd.ExecuteNonQuery();
             }
             catch (Exception ex)
             {
-                conn.Close();       
+                conn.Close();
                 return StatusCode(500, ex.Message);
             }
 
             conn.Close();
-            return Ok();
+            return Ok(new { message = "Successfully created an account.", success = true });
         }
 
-        [HttpDelete]
-        public ActionResult DeleteUser(int id)
+        [HttpPost("login")]
+        public ActionResult Login([FromBody]LoginDto login_data)
+        {
+            MySqlConnection? conn = Connection.getConnection();
+            MySqlDataReader reader;
+            int id;
+            string role;
+            DateTime created_at;
+
+            if (conn == null)
+            {
+                return StatusCode(500, new { message = "Internal Server Error", success = false });
+            }
+
+            try
+            {
+                MySqlCommand cmd = conn.CreateCommand();
+                cmd.CommandText = "SELECT * FROM users WHERE username = @username";
+                cmd.Parameters.AddWithValue("@username", login_data.username);
+
+                reader = cmd.ExecuteReader();
+
+                if (!reader.Read() || !reader.GetString("password").Equals(login_data.password))
+                {
+                    return StatusCode(401, new { message = "Invalid login attempt", success = false});
+                }
+
+                id = reader.GetInt32("id");
+                role = reader.GetString("role");
+                created_at = reader.GetDateTime("created_at");
+            }
+            catch (Exception ex)
+            {
+                conn.Close();       
+                return StatusCode(500, new { message = ex.Message, success = false });
+            }
+
+            conn.Close();
+            return Ok(new {id = id, role = role, created_at = created_at, success = true });
+        }
+
+        [HttpDelete("{id:int}")]
+        public ActionResult DeleteUser([FromRoute]int id)
         {
             MySqlConnection? conn = Connection.getConnection();
 
