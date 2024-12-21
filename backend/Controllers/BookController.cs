@@ -11,7 +11,7 @@ namespace backend.Controllers
     public class BookController : Controller
     {
         [HttpGet]
-        public ActionResult Index()
+        public ActionResult GetBooks()
         {
             MySqlConnection? conn = Connection.getConnection();
             MySqlDataReader reader;
@@ -55,6 +55,68 @@ namespace backend.Controllers
             }
         }
 
-       
+        [HttpPost]
+        public ActionResult CreateBook(string name, string author, string description)
+        {
+            MySqlConnection? conn = Connection.getConnection();
+
+            if (conn == null)
+            {
+                return StatusCode(500);
+            }
+
+            try
+            {
+                MySqlCommand cmd = conn.CreateCommand();
+
+                cmd.CommandText = "INSERT INTO books(name, author, description) VALUES (@name, @author, @desc)";
+
+                cmd.Parameters.AddWithValue("@name", name);
+                cmd.Parameters.AddWithValue("@author", author);
+                cmd.Parameters.AddWithValue("@desc", description);
+
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                conn.Close();
+                return StatusCode(500, ex.Message);
+            }
+
+            conn.Close();
+            return Ok();
+        }
+
+        [HttpDelete]
+        public ActionResult DeleteBook(int id)
+        {
+            MySqlConnection? conn = Connection.getConnection();
+
+            if (conn == null)
+            {
+                return StatusCode(500);
+            }
+
+            try
+            {
+                MySqlCommand cmd = conn.CreateCommand();
+
+                cmd.CommandText = "DELETE FROM books WHERE id = @id";
+
+                cmd.Parameters.AddWithValue("@id", id);
+
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                conn.Close();
+                return StatusCode(500, ex.Message);
+            }
+
+            conn.Close();
+            return Ok();
+        }
+
+
     }
 }

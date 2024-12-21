@@ -163,9 +163,9 @@ namespace backend.Controllers
                 cmd.CommandText = "SELECT * FROM users WHERE username = @username";
                 cmd.Parameters.AddWithValue("@username", username);
 
-                int num = Convert.ToInt32(cmd.ExecuteScalar());
+                int id = Convert.ToInt32(cmd.ExecuteScalar());
 
-                if (num > 0)
+                if (id != 0)
                 {
                     return BadRequest("Username already taken");
                 }
@@ -214,6 +214,33 @@ namespace backend.Controllers
             catch (Exception ex)
             {
                 conn.Close();       
+                return StatusCode(500, ex.Message);
+            }
+
+            conn.Close();
+            return Ok();
+        }
+
+        [HttpDelete]
+        public ActionResult DeleteUser(int id)
+        {
+            MySqlConnection? conn = Connection.getConnection();
+
+            if (conn == null)
+            {
+                return StatusCode(500);
+            }
+
+            try
+            {
+                MySqlCommand cmd = conn.CreateCommand();
+                cmd.CommandText = "DELETE FROM users WHERE id = @id";
+                cmd.Parameters.AddWithValue("@id", id);
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                conn.Close();
                 return StatusCode(500, ex.Message);
             }
 
