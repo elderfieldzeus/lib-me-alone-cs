@@ -1,4 +1,5 @@
 ﻿using backend.Database;
+using backend.Dtos.BorrowedBook;
 using backend.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -12,39 +13,52 @@ namespace backend.Controllers
     public class BorrowedBookController : Controller
     {
         [HttpPost]
-        public ActionResult BorrowBook(int user_id, int book_id)
+        public ActionResult BorrowBook([FromBody] BorrowedBookDto bbDto)
         {
             MySqlConnection? conn = Connection.getConnection();
             
 
             if (conn == null)
             {
-                return StatusCode(500);
+                return StatusCode(500, new { success = false });
             }
 
             try
             {
                 MySqlCommand cmd = conn.CreateCommand();
 
-                cmd.CommandText = "SELECT * FROM books WHERE id = @book_id";
-                cmd.Parameters.AddWithValue("@book_id", book_id);
+                cmd.CommandText = "SELECT * FROM borrowed_books WHERE book_id = @book_id AND user_id = @user_id AND is_returned = false";
+                cmd.Parameters.AddWithValue("@book_id", bbDto.book_id);
+                cmd.Parameters.AddWithValue("@user_id", bbDto.user_id);
 
-                using (var reader = cmd.ExecuteReader()) { 
-                    if (!reader.Read() || reader.GetBoolean("is_borrowed") == true)
+                using (var reader = cmd.ExecuteReader())
+                {
+                    if (reader.Read())
                     {
-                        return BadRequest("Invalid borrow request");
+                        return BadRequest(new { message = "You already requested to borrow this book.", success = false });
                     }
                 }
 
                 cmd.Parameters.Clear();
-                cmd.CommandText = "UPDATE books SET is_borrowed = true WHERE id = @book_id";
-                cmd.Parameters.AddWithValue("@book_id", book_id);
-                cmd.ExecuteNonQuery();
+                cmd.CommandText = "SELECT * FROM books WHERE id = @book_id";
+                cmd.Parameters.AddWithValue("@book_id", bbDto.book_id);
+
+                using (var reader = cmd.ExecuteReader()) { 
+                    if (!reader.Read())
+                    {
+                        return BadRequest(new { message = "Invalid borrow request", success = false});
+                    }
+
+                    if (reader.GetBoolean("is_borrowed") == true)
+                    {
+                        return BadRequest(new { message = "Book is already borrowed", success = false });
+                    }
+                }
 
                 cmd.Parameters.Clear();
                 cmd.CommandText = "INSERT INTO borrowed_books(user_id, book_id) VALUES (@user_id, @book_id)";
-                cmd.Parameters.AddWithValue("@user_id", user_id);
-                cmd.Parameters.AddWithValue("@book_id", book_id);
+                cmd.Parameters.AddWithValue("@user_id", bbDto.user_id);
+                cmd.Parameters.AddWithValue("@book_id", bbDto.book_id);
 
                 cmd.ExecuteNonQuery();
             }
@@ -55,13 +69,14 @@ namespace backend.Controllers
             }
 
             conn.Close();
-            return Ok();
+            return Ok(new { message = "Successfully borrowed book", success = true });
         }
 
         [HttpPost("approve")]
         public ActionResult ApproveBook(int id)
         {
             MySqlConnection? conn = Connection.getConnection();
+            int book_id;
 
             if (conn == null)
             {
@@ -75,6 +90,11 @@ namespace backend.Controllers
                 cmd.CommandText = "UPDATE borrowed_books SET is_approved = true WHERE id = @id";
                 cmd.Parameters.AddWithValue("@id", id);
 
+                book_id = Convert.ToInt32(cmd.ExecuteScalar());
+
+                cmd.Parameters.Clear();
+                cmd.CommandText = "UPDATE books SET is_borrowed = true WHERE id = @book_id";
+                cmd.Parameters.AddWithValue("@book_id", book_id);
                 cmd.ExecuteNonQuery();
             }
             catch (Exception ex)

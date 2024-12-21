@@ -10,8 +10,8 @@ namespace backend.Controllers
     [Route("api/book")]
     public class BookController : Controller
     {
-        [HttpGet]
-        public ActionResult GetBooks()
+        [HttpGet("{page:int}")]
+        public ActionResult GetBooks([FromRoute] int page)
         {
             MySqlConnection? conn = Connection.getConnection();
             MySqlDataReader reader;
@@ -24,7 +24,8 @@ namespace backend.Controllers
             try
             {
                 MySqlCommand cmd = conn.CreateCommand();
-                cmd.CommandText = "SELECT * FROM books";
+                cmd.CommandText = "SELECT * FROM books WHERE is_borrowed = false LIMIT 8 OFFSET @page";
+                cmd.Parameters.AddWithValue("@page", page * 8);
 
                 reader = cmd.ExecuteReader();
 

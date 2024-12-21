@@ -1,16 +1,6 @@
 [
   {
     "ContainingType": "backend.Controllers.BookController",
-    "Method": "GetBooks",
-    "RelativePath": "api/book",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "backend.Controllers.BookController",
     "Method": "CreateBook",
     "RelativePath": "api/book",
     "HttpMethod": "POST",
@@ -52,6 +42,22 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "backend.Controllers.BookController",
+    "Method": "GetBooks",
+    "RelativePath": "api/book/{page}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "page",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "backend.Controllers.BorrowedBookController",
     "Method": "BorrowBook",
     "RelativePath": "api/borrowedbook",
@@ -60,14 +66,9 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "user_id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "book_id",
-        "Type": "System.Int32",
-        "IsRequired": false
+        "Name": "bbDto",
+        "Type": "backend.Dtos.BorrowedBook.BorrowedBookDto",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []
