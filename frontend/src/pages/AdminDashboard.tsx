@@ -40,7 +40,7 @@ const AdminDashboard: React.FC = () => {
             <p className='text-xl font-medium'>Your Information</p>
             <div className='flex flex-col items-start w-full'>
               <p>Name: {username}</p>
-              <p>Account created on: {date.toLocaleString()}</p>
+              <p>Account created on: {date.toLocaleDateString()}</p>
               <p>Role: {role}</p>
             </div>
             <div className='flex gap-4 mt-16'>

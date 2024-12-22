@@ -1,4 +1,5 @@
 ﻿using backend.Database;
+using backend.Dtos.Book;
 using backend.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -57,13 +58,13 @@ namespace backend.Controllers
         }
 
         [HttpPost]
-        public ActionResult CreateBook(string name, string author, string description)
+        public ActionResult CreateBook([FromBody] BookDto book)
         {
             MySqlConnection? conn = Connection.getConnection();
 
             if (conn == null)
             {
-                return StatusCode(500);
+                return StatusCode(500, new { message = "Internal Server Error", success = false });
             }
 
             try
@@ -72,50 +73,53 @@ namespace backend.Controllers
 
                 cmd.CommandText = "INSERT INTO books(name, author, description) VALUES (@name, @author, @desc)";
 
-                cmd.Parameters.AddWithValue("@name", name);
-                cmd.Parameters.AddWithValue("@author", author);
-                cmd.Parameters.AddWithValue("@desc", description);
+                cmd.Parameters.AddWithValue("@name", book.name);
+                cmd.Parameters.AddWithValue("@author", book.author);
+                cmd.Parameters.AddWithValue("@desc", book.description);
 
                 cmd.ExecuteNonQuery();
             }
             catch (Exception ex)
             {
                 conn.Close();
-                return StatusCode(500, ex.Message);
+                return StatusCode(500, new { message = ex.Message, success = false }); ;
             }
 
             conn.Close();
-            return Ok();
+            return Ok(new { message = "Successfully added book", success = true });
         }
 
-        [HttpDelete]
-        public ActionResult DeleteBook(int id)
+        [HttpDelete("{id:int}")]
+        public ActionResult DeleteBook([FromRoute] int id)
         {
             MySqlConnection? conn = Connection.getConnection();
 
             if (conn == null)
             {
-                return StatusCode(500);
+                return StatusCode(500, new { message = "Internal Server Error", success = false });
             }
 
             try
             {
                 MySqlCommand cmd = conn.CreateCommand();
 
-                cmd.CommandText = "DELETE FROM books WHERE id = @id";
-
+                cmd.CommandText = "DELETE FROM borrowed_books WHERE book_id = @id";
                 cmd.Parameters.AddWithValue("@id", id);
+                cmd.ExecuteNonQuery();
 
+                cmd.Parameters.Clear();
+                cmd.CommandText = "DELETE FROM books WHERE id = @id";
+                cmd.Parameters.AddWithValue("@id", id);
                 cmd.ExecuteNonQuery();
             }
             catch (Exception ex)
             {
                 conn.Close();
-                return StatusCode(500, ex.Message);
+                return StatusCode(500, new {message = ex.Message, success = false});
             }
 
             conn.Close();
-            return Ok();
+            return Ok(new { message = "Successfully deleted book.", success = true});
         }
 
 

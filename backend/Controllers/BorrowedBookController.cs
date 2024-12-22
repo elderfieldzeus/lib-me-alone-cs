@@ -35,7 +35,7 @@ namespace backend.Controllers
                 {
                     if (reader.Read())
                     {
-                        return BadRequest(new { message = "You already requested to borrow this book.", success = false });
+                        return BadRequest(new { message = "Request for borrow has already been sent.", success = false });
                     }
                 }
 
@@ -203,11 +203,10 @@ namespace backend.Controllers
             }
         }
 
-        [HttpGet("requested/{id:int}")]
-        public ActionResult GetUserRequestedBooks([FromRoute] int id)
+        [HttpDelete("requested/{id:int}")]
+        public ActionResult DeleteBooks([FromRoute]int id)
         {
             MySqlConnection? conn = Connection.getConnection();
-            MySqlDataReader reader;
 
             if (conn == null)
             {
@@ -217,36 +216,69 @@ namespace backend.Controllers
             try
             {
                 MySqlCommand cmd = conn.CreateCommand();
-                cmd.CommandText = "SELECT * FROM borrowed_books WHERE user_id = @id AND is_approved = false AND is_returned = false";
+                cmd.CommandText = "DELETE FROM borrowed_books WHERE id = @id";
+                cmd.Parameters.AddWithValue("@id", id);
+                cmd.ExecuteNonQuery();
+
+                conn.Close();
+                return Ok(new { message = "Successfully cancelled borrow request", success = true });
+            }
+            catch (Exception ex)
+            {
+                conn.Close();
+                return StatusCode(500, new { message = ex.Message, success = false });
+            }
+        }
+
+        [HttpGet("requested/{id:int}")]
+        public ActionResult GetUserRequestedBooks([FromRoute] int id)
+        {
+            MySqlConnection? conn = Connection.getConnection();
+            MySqlDataReader reader;
+
+            if (conn == null)
+            {
+                return StatusCode(500, new { message = "Internal Server Error", success = false });
+            }
+
+            try
+            {
+                MySqlCommand cmd = conn.CreateCommand();
+                cmd.CommandText = "" +
+                    "SELECT bb.id AS id, username, name, date_borrowed FROM borrowed_books bb " +
+                    "JOIN users u ON bb.user_id = u.id " +
+                    "JOIN books b ON bb.book_id = b.id " +
+                    "WHERE user_id = @id " +
+                    "AND is_approved = false " +
+                    "AND is_returned = false" +
+                    "";
                 cmd.Parameters.AddWithValue("@id", id);
 
                 reader = cmd.ExecuteReader();
 
-                List<BorrowedBook> books = new List<BorrowedBook>();
+                List<YourBookDto> books = new List<YourBookDto>();
 
                 while (reader.Read())
                 {
-                    BorrowedBook book = new BorrowedBook();
+                    YourBookDto book = new YourBookDto();
 
                     Console.WriteLine(reader);
 
                     book.id = (reader.GetInt32("id"));
-                    book.user_id = (reader.GetInt32("user_id"));
-                    book.book_id = (reader.GetInt32("book_id"));
-                    book.is_returned = false;
-                    book.is_approved = false;
+                    book.borrower_name = (reader.GetString("username"));
+                    book.book_name = (reader.GetString("name"));
                     book.date_borrowed = (reader.GetDateTime("date_borrowed"));
 
                     books.Add(book);
                 }
 
                 conn.Close();
-                return Ok(books);
+                return Ok(new {books = books, success = true});
             }
             catch (Exception ex)
             {
                 conn.Close();
-                return StatusCode(500, ex.Message);
+                return StatusCode(500, new {message = ex.Message, success = false});
             }
         }
 
@@ -310,36 +342,41 @@ namespace backend.Controllers
             try
             {
                 MySqlCommand cmd = conn.CreateCommand();
-                cmd.CommandText = "SELECT * FROM borrowed_books WHERE user_id = @id AND is_approved = true AND is_returned = false";
+                cmd.CommandText = "" +
+                    "SELECT bb.id AS id, username, name, date_borrowed FROM borrowed_books bb " +
+                    "JOIN users u ON bb.user_id = u.id " +
+                    "JOIN books b ON bb.book_id = b.id " +
+                    "WHERE user_id = @id " +
+                    "AND is_approved = true " +
+                    "AND is_returned = false" +
+                    "";
                 cmd.Parameters.AddWithValue("@id", id);
 
                 reader = cmd.ExecuteReader();
 
-                List<BorrowedBook> books = new List<BorrowedBook>();
+                List<YourBookDto> books = new List<YourBookDto>();
 
                 while (reader.Read())
                 {
-                    BorrowedBook book = new BorrowedBook();
+                    YourBookDto book = new YourBookDto();
 
                     Console.WriteLine(reader);
 
                     book.id = (reader.GetInt32("id"));
-                    book.user_id = (reader.GetInt32("user_id"));
-                    book.book_id = (reader.GetInt32("book_id"));
-                    book.is_returned = false;
-                    book.is_approved = true;
+                    book.borrower_name = (reader.GetString("username"));
+                    book.book_name = (reader.GetString("name"));
                     book.date_borrowed = (reader.GetDateTime("date_borrowed"));
 
                     books.Add(book);
                 }
 
                 conn.Close();
-                return Ok(books);
+                return Ok(new { books = books, success = true });
             }
             catch (Exception ex)
             {
                 conn.Close();
-                return StatusCode(500, ex.Message);
+                return StatusCode(500, new { message = ex.Message, success = false });
             }
         }
     }
