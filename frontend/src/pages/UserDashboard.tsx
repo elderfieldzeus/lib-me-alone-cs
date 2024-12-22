@@ -119,7 +119,7 @@ const UserDashboard: React.FC = () => {
                   <tbody>
                     {
                       requestedBooks.map((book, index) => {
-                        return <YourBookRow key={index} book={book} cancellable refresh={() => setRefresh(prev => !prev)}/>
+                        return <YourBookRow key={index} book={book} method='cancel' refresh={() => setRefresh(prev => !prev)}/>
                       })
                     }
                   </tbody>

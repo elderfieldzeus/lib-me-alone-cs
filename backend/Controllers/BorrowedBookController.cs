@@ -72,43 +72,8 @@ namespace backend.Controllers
             return Ok(new { message = "Successfully borrowed book", success = true });
         }
 
-        [HttpPost("approve")]
-        public ActionResult ApproveBook(int id)
-        {
-            MySqlConnection? conn = Connection.getConnection();
-            int book_id;
-
-            if (conn == null)
-            {
-                return StatusCode(500);
-            }
-
-            try
-            {
-                MySqlCommand cmd = conn.CreateCommand();
-
-                cmd.CommandText = "UPDATE borrowed_books SET is_approved = true WHERE id = @id";
-                cmd.Parameters.AddWithValue("@id", id);
-
-                book_id = Convert.ToInt32(cmd.ExecuteScalar());
-
-                cmd.Parameters.Clear();
-                cmd.CommandText = "UPDATE books SET is_borrowed = true WHERE id = @book_id";
-                cmd.Parameters.AddWithValue("@book_id", book_id);
-                cmd.ExecuteNonQuery();
-            }
-            catch (Exception ex)
-            {
-                conn.Close();
-                return StatusCode(500, ex.Message);
-            }
-
-            conn.Close();
-            return Ok();
-        }
-
-        [HttpPost("return")]
-        public ActionResult ReturnBook(int id)
+        [HttpGet("approve/{id:int}")]
+        public ActionResult ApproveBook([FromRoute]int id)
         {
             MySqlConnection? conn = Connection.getConnection();
             int book_id;
@@ -129,10 +94,57 @@ namespace backend.Controllers
                 {
                     if(!reader.Read())
                     {
-                        return BadRequest();
-                        
+                        return BadRequest(new { message = "Invalid ID", success = false });
                     }
+                    book_id = reader.GetInt32("book_id");
+                }
 
+                cmd.Parameters.Clear();
+                cmd.CommandText = "UPDATE borrowed_books SET is_approved = true WHERE id = @id";
+                cmd.Parameters.AddWithValue("@id", id);
+
+                cmd.ExecuteNonQuery();
+                Console.WriteLine(book_id);
+
+                cmd.Parameters.Clear();
+                cmd.CommandText = "UPDATE books SET is_borrowed = true WHERE id = @book_id";
+                cmd.Parameters.AddWithValue("@book_id", book_id);
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                conn.Close();
+                return StatusCode(500, ex.Message);
+            }
+
+            conn.Close();
+            return Ok();
+        }
+
+        [HttpGet("return/{id:int}")]
+        public ActionResult ReturnBook([FromRoute]int id)
+        {
+            MySqlConnection? conn = Connection.getConnection();
+            int book_id;
+
+            if (conn == null)
+            {
+                return StatusCode(500);
+            }
+
+            try
+            {
+                MySqlCommand cmd = conn.CreateCommand();
+
+                cmd.CommandText = "SELECT book_id FROM borrowed_books WHERE id = @id";
+                cmd.Parameters.AddWithValue("@id", id);
+
+                using(var reader = cmd.ExecuteReader())
+                {
+                    if(!reader.Read())
+                    {
+                        return BadRequest(new { message = "Invalid ID", success = false });
+                    }
                     book_id = reader.GetInt32("book_id");
                 }
 
@@ -171,35 +183,39 @@ namespace backend.Controllers
             try
             {
                 MySqlCommand cmd = conn.CreateCommand();
-                cmd.CommandText = "SELECT * FROM borrowed_books WHERE is_approved = false AND is_returned = false";
+                cmd.CommandText = "" +
+                    "SELECT bb.id AS id, username, name, date_borrowed FROM borrowed_books bb " +
+                    "JOIN users u ON bb.user_id = u.id " +
+                    "JOIN books b ON bb.book_id = b.id " +
+                    "WHERE is_approved = false " +
+                    "AND is_returned = false" +
+                    "";
 
                 reader = cmd.ExecuteReader();
 
-                List<BorrowedBook> books = new List<BorrowedBook>();
+                List<YourBookDto> books = new List<YourBookDto>();
 
                 while (reader.Read())
                 {
-                    BorrowedBook book = new BorrowedBook();
+                    YourBookDto book = new YourBookDto();
 
                     Console.WriteLine(reader);
 
                     book.id = (reader.GetInt32("id"));
-                    book.user_id = (reader.GetInt32("user_id"));
-                    book.book_id = (reader.GetInt32("book_id"));
-                    book.is_returned = false;
-                    book.is_approved = false;
+                    book.borrower_name = (reader.GetString("username"));
+                    book.book_name = (reader.GetString("name"));
                     book.date_borrowed = (reader.GetDateTime("date_borrowed"));
 
                     books.Add(book);
                 }
 
                 conn.Close();
-                return Ok(books);
+                return Ok(new { books = books, success = true });
             }
             catch (Exception ex)
             {
                 conn.Close();
-                return StatusCode(500, ex.Message);
+                return StatusCode(500, new { message = ex.Message, success = false });
             }
         }
 
@@ -296,35 +312,39 @@ namespace backend.Controllers
             try
             {
                 MySqlCommand cmd = conn.CreateCommand();
-                cmd.CommandText = "SELECT * FROM borrowed_books WHERE is_approved = true AND is_returned = false";
+                cmd.CommandText = "" +
+                    "SELECT bb.id AS id, username, name, date_borrowed FROM borrowed_books bb " +
+                    "JOIN users u ON bb.user_id = u.id " +
+                    "JOIN books b ON bb.book_id = b.id " +
+                    "WHERE is_approved = true " +
+                    "AND is_returned = false" +
+                    "";
 
                 reader = cmd.ExecuteReader();
 
-                List<BorrowedBook> books = new List<BorrowedBook>();
+                List<YourBookDto> books = new List<YourBookDto>();
 
                 while (reader.Read())
                 {
-                    BorrowedBook book = new BorrowedBook();
+                    YourBookDto book = new YourBookDto();
 
                     Console.WriteLine(reader);
 
                     book.id = (reader.GetInt32("id"));
-                    book.user_id = (reader.GetInt32("user_id"));
-                    book.book_id = (reader.GetInt32("book_id"));
-                    book.is_returned = false;
-                    book.is_approved = true;
+                    book.borrower_name = (reader.GetString("username"));
+                    book.book_name = (reader.GetString("name"));
                     book.date_borrowed = (reader.GetDateTime("date_borrowed"));
 
                     books.Add(book);
                 }
 
                 conn.Close();
-                return Ok(books);
+                return Ok(new { books = books, success = true });
             }
             catch (Exception ex)
             {
                 conn.Close();
-                return StatusCode(500, ex.Message);
+                return StatusCode(500, new { message = ex.Message, success = false });
             }
         }
 

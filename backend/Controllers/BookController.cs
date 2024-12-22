@@ -25,7 +25,7 @@ namespace backend.Controllers
             try
             {
                 MySqlCommand cmd = conn.CreateCommand();
-                cmd.CommandText = "SELECT * FROM books WHERE is_borrowed = false LIMIT 8 OFFSET @page";
+                cmd.CommandText = "SELECT * FROM books LIMIT 8 OFFSET @page";
                 cmd.Parameters.AddWithValue("@page", page * 8);
 
                 reader = cmd.ExecuteReader();

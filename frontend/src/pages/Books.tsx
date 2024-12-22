@@ -51,6 +51,7 @@ const Books: React.FC = () => {
                 const data = res.data;
 
                 setBooks(data as IBook[]);
+                console.log(data);
             }
             catch(err: unknown | AxiosError) {
                 if(axios.isAxiosError(err)) {

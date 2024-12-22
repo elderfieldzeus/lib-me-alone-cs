@@ -3,32 +3,32 @@
   "WorkspaceRootPath": "C:\\Users\\Zeus\\OneDrive\\Desktop\\Folder for Everything\\COMPUTER SCIENCE\\GITHUB\\lib-me-alone-cs\\backend\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{061E0337-F707-429B-93EE-93CAD4E9628D}|backend.csproj|c:\\users\\zeus\\onedrive\\desktop\\folder for everything\\computer science\\github\\lib-me-alone-cs\\backend\\controllers\\borrowedbookcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{061E0337-F707-429B-93EE-93CAD4E9628D}|backend.csproj|solutionrelative:controllers\\borrowedbookcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{061E0337-F707-429B-93EE-93CAD4E9628D}|backend.csproj|c:\\users\\zeus\\onedrive\\desktop\\folder for everything\\computer science\\github\\lib-me-alone-cs\\backend\\dtos\\borrowedbook\\yourbookdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{061E0337-F707-429B-93EE-93CAD4E9628D}|backend.csproj|solutionrelative:dtos\\borrowedbook\\yourbookdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{061E0337-F707-429B-93EE-93CAD4E9628D}|backend.csproj|c:\\users\\zeus\\onedrive\\desktop\\folder for everything\\computer science\\github\\lib-me-alone-cs\\backend\\dtos\\borrowedbook\\borrowedbookdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{061E0337-F707-429B-93EE-93CAD4E9628D}|backend.csproj|solutionrelative:dtos\\borrowedbook\\borrowedbookdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{061E0337-F707-429B-93EE-93CAD4E9628D}|backend.csproj|c:\\users\\zeus\\onedrive\\desktop\\folder for everything\\computer science\\github\\lib-me-alone-cs\\backend\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{061E0337-F707-429B-93EE-93CAD4E9628D}|backend.csproj|solutionrelative:controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{061E0337-F707-429B-93EE-93CAD4E9628D}|backend.csproj|c:\\users\\zeus\\onedrive\\desktop\\folder for everything\\computer science\\github\\lib-me-alone-cs\\backend\\controllers\\bookcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{061E0337-F707-429B-93EE-93CAD4E9628D}|backend.csproj|solutionrelative:controllers\\bookcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{061E0337-F707-429B-93EE-93CAD4E9628D}|backend.csproj|c:\\users\\zeus\\onedrive\\desktop\\folder for everything\\computer science\\github\\lib-me-alone-cs\\backend\\dtos\\book\\bookdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{061E0337-F707-429B-93EE-93CAD4E9628D}|backend.csproj|solutionrelative:dtos\\book\\bookdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{061E0337-F707-429B-93EE-93CAD4E9628D}|backend.csproj|c:\\users\\zeus\\onedrive\\desktop\\folder for everything\\computer science\\github\\lib-me-alone-cs\\backend\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{061E0337-F707-429B-93EE-93CAD4E9628D}|backend.csproj|solutionrelative:controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{061E0337-F707-429B-93EE-93CAD4E9628D}|backend.csproj|c:\\users\\zeus\\onedrive\\desktop\\folder for everything\\computer science\\github\\lib-me-alone-cs\\backend\\controllers\\borrowedbookcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{061E0337-F707-429B-93EE-93CAD4E9628D}|backend.csproj|solutionrelative:controllers\\borrowedbookcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{061E0337-F707-429B-93EE-93CAD4E9628D}|backend.csproj|c:\\users\\zeus\\onedrive\\desktop\\folder for everything\\computer science\\github\\lib-me-alone-cs\\backend\\models\\borrowedbook.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{061E0337-F707-429B-93EE-93CAD4E9628D}|backend.csproj|solutionrelative:models\\borrowedbook.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{061E0337-F707-429B-93EE-93CAD4E9628D}|backend.csproj|c:\\users\\zeus\\onedrive\\desktop\\folder for everything\\computer science\\github\\lib-me-alone-cs\\backend\\dtos\\borrowedbook\\borrowedbookdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{061E0337-F707-429B-93EE-93CAD4E9628D}|backend.csproj|solutionrelative:dtos\\borrowedbook\\borrowedbookdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{061E0337-F707-429B-93EE-93CAD4E9628D}|backend.csproj|c:\\users\\zeus\\onedrive\\desktop\\folder for everything\\computer science\\github\\lib-me-alone-cs\\backend\\dtos\\borrowedbook\\yourbookdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{061E0337-F707-429B-93EE-93CAD4E9628D}|backend.csproj|solutionrelative:dtos\\borrowedbook\\yourbookdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{061E0337-F707-429B-93EE-93CAD4E9628D}|backend.csproj|c:\\users\\zeus\\onedrive\\desktop\\folder for everything\\computer science\\github\\lib-me-alone-cs\\backend\\dtos\\book\\bookdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{061E0337-F707-429B-93EE-93CAD4E9628D}|backend.csproj|solutionrelative:dtos\\book\\bookdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{061E0337-F707-429B-93EE-93CAD4E9628D}|backend.csproj|c:\\users\\zeus\\onedrive\\desktop\\folder for everything\\computer science\\github\\lib-me-alone-cs\\backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -46,11 +46,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "YourBookDto.cs",
               "DocumentMoniker": "C:\\Users\\Zeus\\OneDrive\\Desktop\\Folder for Everything\\COMPUTER SCIENCE\\GITHUB\\lib-me-alone-cs\\backend\\Dtos\\BorrowedBook\\YourBookDto.cs",
               "RelativeDocumentMoniker": "Dtos\\BorrowedBook\\YourBookDto.cs",
@@ -58,12 +58,11 @@
               "RelativeToolTip": "Dtos\\BorrowedBook\\YourBookDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-22T10:03:10.635Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-22T10:03:10.635Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "BookDto.cs",
               "DocumentMoniker": "C:\\Users\\Zeus\\OneDrive\\Desktop\\Folder for Everything\\COMPUTER SCIENCE\\GITHUB\\lib-me-alone-cs\\backend\\Dtos\\Book\\BookDto.cs",
               "RelativeDocumentMoniker": "Dtos\\Book\\BookDto.cs",
@@ -71,12 +70,11 @@
               "RelativeToolTip": "Dtos\\Book\\BookDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAA6AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-22T09:34:10.844Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-22T09:34:10.844Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "BorrowedBookDto.cs",
               "DocumentMoniker": "C:\\Users\\Zeus\\OneDrive\\Desktop\\Folder for Everything\\COMPUTER SCIENCE\\GITHUB\\lib-me-alone-cs\\backend\\Dtos\\BorrowedBook\\BorrowedBookDto.cs",
               "RelativeDocumentMoniker": "Dtos\\BorrowedBook\\BorrowedBookDto.cs",
@@ -89,7 +87,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 3,
               "Title": "BorrowedBook.cs",
               "DocumentMoniker": "C:\\Users\\Zeus\\OneDrive\\Desktop\\Folder for Everything\\COMPUTER SCIENCE\\GITHUB\\lib-me-alone-cs\\backend\\Models\\BorrowedBook.cs",
               "RelativeDocumentMoniker": "Models\\BorrowedBook.cs",
@@ -97,7 +95,8 @@
               "RelativeToolTip": "Models\\BorrowedBook.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-21T15:32:28.011Z"
+              "WhenOpened": "2024-12-21T15:32:28.011Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -125,39 +124,39 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "BorrowedBookController.cs",
               "DocumentMoniker": "C:\\Users\\Zeus\\OneDrive\\Desktop\\Folder for Everything\\COMPUTER SCIENCE\\GITHUB\\lib-me-alone-cs\\backend\\Controllers\\BorrowedBookController.cs",
               "RelativeDocumentMoniker": "Controllers\\BorrowedBookController.cs",
-              "ToolTip": "C:\\Users\\Zeus\\OneDrive\\Desktop\\Folder for Everything\\COMPUTER SCIENCE\\GITHUB\\lib-me-alone-cs\\backend\\Controllers\\BorrowedBookController.cs*",
-              "RelativeToolTip": "Controllers\\BorrowedBookController.cs*",
-              "ViewState": "AgIAAMIAAAAAAAAAAAAwwNMAAAANAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\Zeus\\OneDrive\\Desktop\\Folder for Everything\\COMPUTER SCIENCE\\GITHUB\\lib-me-alone-cs\\backend\\Controllers\\BorrowedBookController.cs",
+              "RelativeToolTip": "Controllers\\BorrowedBookController.cs",
+              "ViewState": "AgIAAIAAAAAAAAAAAAAwwJcAAABdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-21T02:45:30.013Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 0,
               "Title": "UserController.cs",
               "DocumentMoniker": "C:\\Users\\Zeus\\OneDrive\\Desktop\\Folder for Everything\\COMPUTER SCIENCE\\GITHUB\\lib-me-alone-cs\\backend\\Controllers\\UserController.cs",
               "RelativeDocumentMoniker": "Controllers\\UserController.cs",
               "ToolTip": "C:\\Users\\Zeus\\OneDrive\\Desktop\\Folder for Everything\\COMPUTER SCIENCE\\GITHUB\\lib-me-alone-cs\\backend\\Controllers\\UserController.cs",
               "RelativeToolTip": "Controllers\\UserController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAKEAAAAAAAAAAAAIwLwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-21T02:45:20.533Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "BookController.cs",
               "DocumentMoniker": "C:\\Users\\Zeus\\OneDrive\\Desktop\\Folder for Everything\\COMPUTER SCIENCE\\GITHUB\\lib-me-alone-cs\\backend\\Controllers\\BookController.cs",
               "RelativeDocumentMoniker": "Controllers\\BookController.cs",
               "ToolTip": "C:\\Users\\Zeus\\OneDrive\\Desktop\\Folder for Everything\\COMPUTER SCIENCE\\GITHUB\\lib-me-alone-cs\\backend\\Controllers\\BookController.cs",
               "RelativeToolTip": "Controllers\\BookController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEMAAAANAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-21T02:45:01.505Z",
               "EditorCaption": ""

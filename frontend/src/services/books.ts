@@ -28,6 +28,22 @@ export const fetchYourUnreturnedBooks = (user_id: number) => {
     return API.get("/borrowedbook/unreturned/" + user_id);
 }
 
+export const fetchRequestedBooks = () => {
+    return API.get("/borrowedbook/requested/");
+}
+
+export const fetchUnreturnedBooks = () => {
+    return API.get("/borrowedbook/unreturned/");
+}
+
 export const cancelBorrow = (book_id: number) => {
     return API.delete("/borrowedbook/requested/" + book_id);
+}
+
+export const approveBorrow = (book_id: number) => {
+    return API.get("/borrowedbook/approve/" + book_id);
+}
+
+export const returnBook = (book_id: number) => {
+    return API.get("/borrowedbook/return/" + book_id);
 }

@@ -14,6 +14,10 @@ interface BookProps {
 const Book: React.FC<BookProps> = ({book, role, user_id, refresh}) => {
 
   const handleBorrowBook = async () => {
+    if(book.is_borrowed) {
+      return alert("Book is already borrowed.");
+    }
+
     try {
       const res = await borrowBook(user_id, book.id);
       const data = res.data;

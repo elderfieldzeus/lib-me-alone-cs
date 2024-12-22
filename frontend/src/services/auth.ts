@@ -14,3 +14,11 @@ export const signup = async (username: string, password: string, cpassword: stri
         cpassword
     });
 }
+
+export const signupLib = (username: string, password: string, cpassword: string) => {
+    return API.post('/user/signup/lib', {
+        username,
+        password,
+        cpassword
+    });
+}
